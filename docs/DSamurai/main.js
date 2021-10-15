@@ -122,7 +122,7 @@ function update() {
     }
 
     // Terrain (Ground)
-    color("black");
+    color("green");
     rect(0, GAME.Y_OFFSET + 3, GAME.WIDTH, GAME.Y_OFFSET);
     // Terrain (Upper Level)
     color("yellow");
@@ -193,11 +193,10 @@ function update() {
         (player.pos.x < 0 && player.vx < 0) ||
         (player.pos.x > 99 && player.vx > 0)
     ) {
-        // play("laser");
         player.vx *= -1;
     }
     if (!Deflecting) {
-        player.pos.x += (player.vx * sqrt(difficulty)) / GAME.PLAYER_SPEED;
+        player.pos.x += (player.vx) / GAME.PLAYER_SPEED;
     } else {
         player.pos.x += 0;
     }
